@@ -1,0 +1,19 @@
+.parent{
+    border:1px solid red;
+    padding:100px;
+    width:50px;
+    margin:auto;
+    background-color: #ff0000;
+}
+.child{
+    border:1px solid blue;
+    padding:50px;
+    background-color: #0000ff;
+    /* margin:auto */
+}
+.grandChild{
+    border:1px solid black;
+    padding: 20px;
+    background-color: #ffe4c4;
+    /* margin: auto; */
+}

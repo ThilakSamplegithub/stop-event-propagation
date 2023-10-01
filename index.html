@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <div class="grandChild">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("body").addEventListener("click",(e)=>{console.log("body captured")},true)
+    document.querySelector(".parent").addEventListener("click",(e)=>{
+        e.stopPropagation()// it will stop here only it will stop next event capturing phase as well as 
+        // bubbling phase
+        console.log("parent captured")
+    },true)
+    document.querySelector(".child").addEventListener("click",(e)=>{
+        console.log("child captured")
+    },true)
+    document.querySelector(".grandChild").addEventListener("click",(e)=>{
+        console.log("grandChild captured")
+    },true)
+    document.querySelector("body").addEventListener("click",(e)=>{console.log("body bubbled")})
+    document.querySelector(".parent").addEventListener("click",(e)=>{
+        console.log("parent bubbled")
+    })
+    document.querySelector(".child").addEventListener("click",(e)=>{
+        console.log("child bubbled")
+    })
+    document.querySelector(".grandChild").addEventListener("click",(e)=>{
+        console.log("grandChild bubbled")
+    })
+</script>
